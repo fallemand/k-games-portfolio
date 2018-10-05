@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import { render } from 'react-dom';
 
+import './assets/images/logo.svg';
 import './styles/_common.scss';
 
 /**

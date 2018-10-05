@@ -8,6 +8,22 @@
     <title>King - Games Portfolio</title>
   </head>
   <body>
-    <main class="container" id="root-app"></main>
+    <header role="banner" class="header">
+      <nav role="navigation" class="header__container">
+        <a href="/" class="header__link header__link--active" data-test="headerHomeLink">Search Games</a>
+        <a href="/games" class="header__link" data-test="headerGamesLink">Portfolio</a>
+        <a href="/jobs" class="header__link" data-test="headerJobsLink">About</a>
+      </nav>
+      <img class="header__logo" src="/assets/logo.svg">
+    </header>
+
+    <!-- React App-->
+    <main role="main" class="main" id="root-app" />
+
+    <footer role="contentinfo" class="footer">
+      <section class="footer__disclaimer">
+        © 2018 Demo - This is just a demo app. Nothing of what is shown here is real.
+      </section>
+    </footer>
   </body>
 </html>
