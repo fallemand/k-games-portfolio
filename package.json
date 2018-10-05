@@ -1,0 +1,79 @@
+{
+  "name": "k-games-portfolio",
+  "version": "1.0.0",
+  "description": "Search games and add them to your portfolio so you can play later!",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "NODE_ENV=production node ./index.js",
+    "start:dev": "NODE_ENV=development nodemon ./index.js",
+    "start:debug": "NODE_ENV=development nodemon --debug-frk ./index.js",
+    "start:test": "NODE_ENV=test node ./index.js",
+    "test": "npm run test:unit",
+    "test:unit": "NODE_ENV=test jest",
+    "test:e2e": "echo TODO",
+    "test:e2e-setup": "selenium-standalone install --version=3.4.0 --drivers.chrome.version=2.40 --singleDriverInstall=chrome",
+    "lint": "eslint --ext .jsx,.js index.js ./api ./app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fallemand/k-games-portfolio.git"
+  },
+  "keywords": [
+    "node",
+    "react",
+    "express",
+    "delivery",
+    "hero"
+  ],
+  "author": "Facundo Allemand <fallemand@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fallemand/dh-restaurants-test/issues"
+  },
+  "homepage": "https://github.com/fallemand/dh-restaurants-test#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "imagemin-webpack-plugin": "^2.3.0",
+    "jest": "^23.6.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "regenerator-runtime": "^0.12.1",
+    "sass-loader": "^7.1.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "express": "^4.16.3",
+    "prop-types": "^15.6.2",
+    "query-string": "^5.1.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1",
+    "whatwg-fetch": "^3.0.0"
+  }
+}
