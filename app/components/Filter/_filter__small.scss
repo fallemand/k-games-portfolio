@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.filter {
+  width: 100%;
+
+  .filter__field {
+    width: 40%;
+    display: inline-block;
+  }
+
+  .filter__value {
+    border-radius: 0 4px 4px 0;
+    border: 1px solid $border-color;
+    padding: 8px 10px 7px;
+    margin-left: -1px;
+    width: 60%;
+    display: inline-block;
+  }
+}
