@@ -7,6 +7,7 @@ import Filter from '../../components/Filter';
 import GameCard from '../../components/GameCard';
 import Pagination from '../../components/Pagination';
 import gamesService from '../../services/games.service';
+import portfolioService from '../../services/portfolio.service';
 import './search.scss';
 
 class SearchPage extends React.Component {
@@ -14,11 +15,13 @@ class SearchPage extends React.Component {
     super(props);
     this.onFilterChange = this.onFilterChange.bind(this);
     this.onPageChange = this.onPageChange.bind(this);
+    this.onCardButtonPressed = this.onCardButtonPressed.bind(this);
     this.getListItems = this.getListItems.bind(this);
     this.getParamsFromUrl = this.getParamsFromUrl.bind(this);
     this.pageSize = 10;
     this.state = {
       games: [],
+      portfolio: [],
       filter: '',
       sort: '',
       page: 1,
@@ -44,6 +47,19 @@ class SearchPage extends React.Component {
   onPageChange(page) {
     const params = this.completeSearchParams({ page });
     this.getListItems(params);
+  }
+
+  onCardButtonPressed(action, gameKey) {
+    let portfolio;
+    switch (action) {
+      case 'add': portfolio = portfolioService.add(gameKey); break;
+      case 'remove': portfolio = portfolioService.remove(gameKey); break;
+      case 'play': portfolioService.addGame(gameKey); break;
+      default: console.error('invalid action', action);
+    }
+    this.setState({
+      portfolio,
+    });
   }
 
   getListItems(params) {
@@ -84,7 +100,7 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    const { games, filter, sort, page, total } = this.state;
+    const { games, filter, sort, page, total, portfolio } = this.state;
     const { history } = this.props;
     return (
       <div className="games">
@@ -96,7 +112,13 @@ class SearchPage extends React.Component {
           { 'games__list--loading': false },
         )}
         >
-          {games.map(game => <GameCard game={game} />)}
+          {games.map(game => (
+            <GameCard
+              game={game}
+              onAction={this.onCardButtonPressed}
+              actions={portfolio.includes(game.short) ? ['remove', 'play'] : ['add', 'play']}
+            />
+          ))}
         </div>
         <Pagination
           className="games__pagination"

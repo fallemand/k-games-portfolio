@@ -26,7 +26,7 @@ const addImagesAttributes = array => (
 /**
  * Get games list from json mock
  * @param {Object} params to filter and sort response - [optional]
- * @returns {Array} list of games
+ * @returns {Object} games: list of games, total: total games
  */
 const getGames = ({ filter, sort, page, pageSize }) => {
   const filteredGames = filter ? games.filter(
