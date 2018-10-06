@@ -3,23 +3,12 @@ import { games } from './data/games.json';
 const baseUrl = 'http://royal1.midasplayer.com/images/games/';
 
 /**
- * Get games list from json mock
- * @param {String} query to filter - [optional]
- * @returns {Array} list of games
- */
-const getGames = query => (
-  query ? games.filter(
-    game => game.name.toLowerCase().includes(query.toLowerCase()),
-  ) : games
-);
-
-/**
  * Get games list with images url
  * @param {String} query to filter - [optional]
  * @returns {Array} list of games
  */
-const getGamesWithImages = query => (
-  getGames(query).map(game => ({
+const addImagesAttributes = array => (
+  array.map(game => ({
     name: game.name,
     short: game.short,
     url: game.url,
@@ -34,7 +23,40 @@ const getGamesWithImages = query => (
   }))
 );
 
+/**
+ * Get games list from json mock
+ * @param {Object} params to filter and sort response - [optional]
+ * @returns {Array} list of games
+ */
+const getGames = ({ filter, sort, page, pageSize }) => {
+  const filteredGames = filter ? games.filter(
+    game => game.name.toLowerCase().includes(filter.toLowerCase()),
+  ) : games;
+
+  if (sort) {
+    filteredGames.sort((a, b) => {
+      switch (sort) {
+        case 'RANDOM': return 0.5 - Math.random();
+        case 'ASC': return a.name.localeCompare(b.name);
+        case 'DESC': return a.name.localeCompare(b.name) * -1;
+        default: return 0;
+      }
+    });
+  }
+
+  let paginatedGames = [];
+  if (page) {
+    const startElement = (page - 1) * pageSize;
+    const endElement = page * pageSize;
+    paginatedGames = filteredGames.slice(startElement, endElement);
+  }
+
+  return {
+    games: addImagesAttributes(paginatedGames),
+    total: filteredGames.length,
+  };
+};
+
 export default {
-  getGamesWithImages,
   getGames,
 };

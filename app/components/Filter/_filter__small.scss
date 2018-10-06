@@ -1,19 +1,64 @@
 @import '../../styles/variables';
 
+$filter-color: #fff;
+$filter-field-background: #c73473;
+$filter-width: 160px;
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
 .filter {
   width: 100%;
+  border-radius: 4px;
+  background-color: #fa4092;
+  padding: 20px;
 
-  .filter__field {
-    width: 40%;
+  .filter__fieldset {
+    border: 0;
     display: inline-block;
+    text-align: right;
+    padding: 0 25px;
   }
 
-  .filter__value {
-    border-radius: 0 4px 4px 0;
-    border: 1px solid $border-color;
-    padding: 8px 10px 7px;
-    margin-left: -1px;
-    width: 60%;
-    display: inline-block;
+  .filter__legend {
+    margin: 4px 0;
+    float: left;
+    color: $filter-color;
+    font-size: $font-size-18;
+    font-weight: $font-light;
+    padding-right: 20px;
+  }
+
+  .filter__field {
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 8px;
+    border: 0;
+    text-align: center;
+    color: $filter-color;
+    border-radius: 25px;
+    background-color: $filter-field-background;
+    width: $filter-width;
+  }
+
+  .filter__button {
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.22);
+    border-radius: 999px;
+    color: $filter-color;
+    font-weight: $font-light;
+    font-size: $font-size-14;
+    padding: 8px 0 10px;
+    background: $filter-field-background;
+    border: 0;
+    width: $filter-width;
+    cursor: pointer;
+  }
+
+  @include placeholder {
+    color: #ffc6df;
   }
 }

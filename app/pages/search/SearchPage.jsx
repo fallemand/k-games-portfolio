@@ -12,20 +12,84 @@ import './search.scss';
 class SearchPage extends React.Component {
   constructor(props) {
     super(props);
-    this.games = [];
+    this.onFilterChange = this.onFilterChange.bind(this);
+    this.onPageChange = this.onPageChange.bind(this);
+    this.getListItems = this.getListItems.bind(this);
+    this.getParamsFromUrl = this.getParamsFromUrl.bind(this);
+    this.pageSize = 10;
+    this.state = {
+      games: [],
+      filter: '',
+      sort: '',
+      page: 1,
+    };
   }
 
   componentWillMount() {
-    this.games = gamesService.getGamesWithImages();
+    const params = this.getParamsFromUrl();
+    this.getListItems(
+      this.completeSearchParams(params),
+    );
+  }
+
+  onFilterChange(params) {
+    this.getListItems(
+      this.completeSearchParams({
+        ...params,
+        page: 1, // OnFilter, go back to page 1.
+      }),
+    );
+  }
+
+  onPageChange(page) {
+    const params = this.completeSearchParams({ page });
+    this.getListItems(params);
+  }
+
+  getListItems(params) {
+    const { total, games } = gamesService.getGames(params);
+    this.setQueryParams(params);
+    this.setState({
+      ...params,
+      games,
+      total,
+    });
+  }
+
+  getParamsFromUrl() {
+    const { location } = this.props;
+    const params = queryString.parse(location.search);
+    return params;
+  }
+
+  setQueryParams(params) {
+    const { location, history } = this.props;
+    const queryParams = queryString.parse(location.search);
+    Object.assign(queryParams, params);
+    history.push({
+      pathname: '/search',
+      search: `?${queryString.stringify(queryParams)}`,
+    });
+  }
+
+  completeSearchParams(params) {
+    const { pageSize, state: { filter, sort, page } } = this;
+    return {
+      filter,
+      sort,
+      page,
+      pageSize,
+      ...params,
+    };
   }
 
   render() {
-    const { games } = this;
+    const { games, filter, sort, page, total } = this.state;
     const { history } = this.props;
     return (
       <div className="games">
         <div className="games__actions">
-          Actions!
+          <Filter onChange={this.onFilterChange} filter={filter} sort={sort} />
         </div>
         <div className={classnames(
           'games__list',
@@ -36,10 +100,10 @@ class SearchPage extends React.Component {
         </div>
         <Pagination
           className="games__pagination"
-          active={1}
-          total={games.length}
-          show={10}
-          onChange={() => {}}
+          active={parseInt(page, 10)}
+          total={total}
+          show={this.pageSize}
+          onChange={this.onPageChange}
         />
       </div>
     );

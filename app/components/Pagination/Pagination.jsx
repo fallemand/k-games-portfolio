@@ -9,6 +9,7 @@ const Pagination = ({ className, total, show, onChange, active }) => {
     <div className={classnames(className, 'pagination')}>
       <button
         type="button"
+        disabled={active === 1}
         className="pagination__number"
         onClick={() => onChange(active > 1 ? active - 1 : 1)}
       >
@@ -31,6 +32,7 @@ const Pagination = ({ className, total, show, onChange, active }) => {
       <button
         type="button"
         className="pagination__number"
+        disabled={active === pages}
         onClick={() => onChange(active < pages ? active + 1 : pages)}
       >
         &raquo;
