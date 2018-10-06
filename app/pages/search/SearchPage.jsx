@@ -35,6 +35,7 @@ class SearchPage extends React.Component {
           {games.map(game => <GameCard game={game} />)}
         </div>
         <Pagination
+          className="games__pagination"
           active={1}
           total={games.length}
           show={10}
