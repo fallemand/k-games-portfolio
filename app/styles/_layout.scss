@@ -19,6 +19,11 @@ body {
   width: 100%;
 }
 
+.main__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .header {
   height: 76px;
   background: $header-background-color radial-gradient(circle at 50% 50%, #fff, #fff 43%, hsla(0, 0%, 100%, 0));
