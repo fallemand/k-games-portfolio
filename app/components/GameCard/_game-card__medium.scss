@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.filter {
+  width: 250px;
+
+  .filter__field {
+    margin: 5px 0;
+    border-radius: 4px 0 0 4px;
+    -webkit-appearance: none;
+    width: 40%;
+    min-width: inherit;
+  }
+
+  .filter__value {
+    margin: 5px 0 5px -1px;
+    border-radius: 0 4px 4px 0;
+    padding: 7px 10px 8px;
+    -webkit-appearance: none;
+    width: 60%;
+    vertical-align: bottom;
+  }
+}
