@@ -91,6 +91,11 @@ class PortfolioPage extends React.Component {
               );
             })}
           </ul>
+          {games.length === 0 && (
+            <div className="portfolio__items-no-items">
+              You have no games in your portfolio!
+            </div>
+          )}
         </div>
         <Snackbar message={snackbar.message} show={snackbar.show} />
       </div>

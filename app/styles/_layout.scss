@@ -49,6 +49,17 @@ body {
     font-size: 20px;
     text-decoration: none;
     margin: 0 10px;
+    transition: color $transition;
+
+    &:after {
+      content: '';
+      background-color: $header-color-active;
+      left: 50%;
+      right: 50%;
+      bottom: -8px;
+      position: absolute;
+      transition: left $transition, right $transition;
+    }
 
     &.header__link--active,
     &:hover {
@@ -56,11 +67,7 @@ body {
       position: relative;
 
       &:after {
-        content: '';
-        background-color: $header-color-active;
         height: 3px;
-        position: absolute;
-        bottom: -8px;
         left: 20%;
         right: 20%;
         border-radius: 10%;

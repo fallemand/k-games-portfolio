@@ -3,18 +3,22 @@
   border: 3px solid $background-color-tertiary;
   border-radius: $border-radius;
 
-  .game__header {
-    position: relative;
-    height: 70px;
-    overflow: hidden;
-  }
-
   .game__title {
     color: $font-color-secondary;
     text-align: center;
     font-weight: $font-bold;
     font-size: $font-size-32;
     padding-top: 5px;
+  }
+
+  .game__header {
+    position: relative;
+  }
+
+  .game__button {
+    position: absolute;
+    top: 2px;
+    right: 20px;
   }
 
   .game__play {
@@ -31,6 +35,14 @@
     &:hover {
       .game__play-overlay {
         background-color: rgba(0, 0, 0, 0.3);
+      }
+      .game__play-icon {
+        width: 150px;
+        height: 150px;
+        margin-top: -75px;
+        margin-left: -75px;
+        font-size: $font-size-22;
+        padding-top: 60px;
       }
     }
   }
@@ -64,6 +76,7 @@
     margin-left: -50px;
     text-align: center;
     padding-top: 40px;
-    color: #fff;
+    color: $font-color-secondary;
+    transition: all $transition;
   }
 }

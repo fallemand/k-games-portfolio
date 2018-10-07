@@ -58,4 +58,12 @@ $card-background--color-hover: rgba(255, 255, 255, 0.95);
   .portfolio__item-actions {
     float: right;
   }
+
+  .portfolio__items-no-items {
+    padding: 30px;
+    background-color: #f7f7f7;
+    border-radius: $border-radius;
+    text-align: center;
+    font-weight: $font-light;
+  }
 }

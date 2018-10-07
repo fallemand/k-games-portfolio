@@ -17,7 +17,7 @@ const GameCard = ({ className, game, onAction, actions }) => (
         )}
         {actions.includes('remove') && (
           <Button onClick={() => onAction('remove', game.short)} color={Button.colors.DEFAULT}>
-            Remove Portfolio
+            Remove from Portfolio
           </Button>
         )}
         {actions.includes('play') && (

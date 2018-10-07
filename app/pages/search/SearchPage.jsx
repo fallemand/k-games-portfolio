@@ -9,6 +9,7 @@ import Pagination from '../../components/Pagination';
 import gamesService from '../../services/games.service';
 import portfolioService from '../../services/portfolio.service';
 import './search.scss';
+import Snackbar from "../../components/Snackbar";
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -21,10 +22,11 @@ class SearchPage extends React.Component {
     this.pageSize = 10;
     this.state = {
       games: [],
-      portfolio: [],
+      portfolio: portfolioService.getGames(),
       filter: '',
       sort: '',
       page: 1,
+      snackbar: {},
     };
   }
 
@@ -52,15 +54,32 @@ class SearchPage extends React.Component {
   onCardButtonPressed(action, gameKey) {
     const { history } = this.props;
     let portfolio;
+    const snackbar = {
+      show: true,
+    };
     switch (action) {
-      case 'add': portfolio = portfolioService.add(gameKey); break;
-      case 'remove': portfolio = portfolioService.remove(gameKey); break;
+      case 'add':
+        portfolio = portfolioService.add(gameKey);
+        snackbar.message = 'The game has been added to your portfolio!';
+        this.setState({ snackbar });
+        break;
+      case 'remove':
+        portfolio = portfolioService.remove(gameKey);
+        snackbar.message = 'The game has been removed from your portfolio!';
+        this.setState({ snackbar });
+        break;
       case 'play': history.push(`/games/${gameKey}`); break;
       default: console.error('invalid action', action);
     }
     this.setState({
       portfolio,
     });
+
+    // Hide snackbar after 3 seconds
+    setTimeout(() => {
+      snackbar.show = false;
+      this.setState({ snackbar });
+    }, 2000);
   }
 
   getListItems(params) {
@@ -109,7 +128,7 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    const { games, filter, sort, page, total, portfolio, loading } = this.state;
+    const { games, filter, sort, page, total, portfolio, loading, snackbar } = this.state;
     return (
       <div className="search">
         <div className="search__actions">
@@ -133,6 +152,7 @@ class SearchPage extends React.Component {
           show={this.pageSize}
           onChange={this.onPageChange}
         />
+        <Snackbar message={snackbar.message} show={snackbar.show} />
       </div>
     );
   }

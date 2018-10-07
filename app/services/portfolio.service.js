@@ -47,8 +47,19 @@ const remove = (id) => {
   return getGames();
 };
 
+/**
+ * Checks if the game is in the portfolio
+ * @param {String} shortname of the game to remove
+ * @returns {Boolean} wheather the game is or not in the portfolio
+ */
+const contains = (id) => {
+  const portfolioGames = getPortfolioSet();
+  return portfolioGames.has(id);
+};
+
 export default {
   add,
   remove,
   getGames,
+  contains,
 };
