@@ -16,10 +16,10 @@ import './styles/_common.scss';
 render((
   <Router>
     <Switch>
-      <Route exact path="/" render={() => <div>Initial Page</div>} />
       <Route exact path="/search" component={SearchPage} />
       <Route exact path="/portfolio" component={PortfolioPage} />
       <Route exact path="/games/:id" component={GamePage} />
+      <Route exact path="/" render={() => <Redirect to="/search" />} />
     </Switch>
   </Router>
 ), document.getElementById('root-app'));

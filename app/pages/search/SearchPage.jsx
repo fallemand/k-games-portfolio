@@ -109,16 +109,13 @@ class SearchPage extends React.Component {
 
   render() {
     const { games, filter, sort, page, total, portfolio, loading } = this.state;
-    const { history } = this.props;
     return (
       <div className="search">
         <div className="search__actions">
           <Filter onChange={this.onFilterChange} filter={filter} sort={sort} />
         </div>
-        <div className={classnames(
-          'search__list',
-          { 'search__list--loading': loading },
-        )}
+        <div
+          className={classnames('search__list', { 'search__list--loading': loading })}
         >
           {games.map(game => (
             <GameCard

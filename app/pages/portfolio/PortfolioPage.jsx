@@ -50,14 +50,24 @@ class PortfolioPage extends React.Component {
               const gameInfo = gamesService.getGame(game);
               return (
                 <li className="portfolio__item">
-                  <button type="button" className="portfolio__item-link" onClick={evt => this.handleGameClick(evt, gameInfo.short)}>
+                  <button
+                    type="button"
+                    className="portfolio__item-link"
+                    onClick={evt => this.handleGameClick(evt, gameInfo.short)}
+                  >
                     <img className="portfolio__item-img" src={gameInfo.images.iconM} alt={gameInfo.name} />
                     <h3 className="portfolio__item-name">{gameInfo.name}</h3>
                     <div className="portfolio__item-actions">
-                      <Button onClick={() => this.removeGame(gameInfo.short)} color={Button.colors.DEFAULT}>
+                      <Button
+                        onClick={evt => this.removeGame(evt, gameInfo.short)}
+                        color={Button.colors.DEFAULT}
+                      >
                         Remove Portfolio
                       </Button>
-                      <Button onClick={() => this.playGame(gameInfo.short)} color={Button.colors.BLUE}>
+                      <Button
+                        onClick={() => this.playGame(gameInfo.short)}
+                        color={Button.colors.BLUE}
+                      >
                         Play
                       </Button>
                     </div>
@@ -74,7 +84,6 @@ class PortfolioPage extends React.Component {
 
 PortfolioPage.propTypes = {
   history: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export default withRouter(PortfolioPage);
