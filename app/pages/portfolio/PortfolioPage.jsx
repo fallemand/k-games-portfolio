@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './portfolio.scss';
 import Button from '../../components/Button';
+import Snackbar from '../../components/Snackbar';
 import portfolioService from '../../services/portfolio.service';
 import gamesService from '../../services/games.service';
 
@@ -14,6 +15,10 @@ class PortfolioPage extends React.Component {
     this.playGame = this.playGame.bind(this);
     this.state = {
       games: portfolioService.getGames(),
+      snackbar: {
+        message: '',
+        show: false,
+      },
     };
   }
 
@@ -26,9 +31,19 @@ class PortfolioPage extends React.Component {
   removeGame(event, gameId) {
     event.stopPropagation();
     const games = portfolioService.remove(gameId);
+    const snackbar = {
+      message: 'The game has been removed from your portfolio!',
+      show: true,
+    };
     this.setState({
+      snackbar,
       games,
     });
+    // Hide snackbar after 3 seconds
+    setTimeout(() => {
+      snackbar.show = false;
+      this.setState({ snackbar });
+    }, 3000);
   }
 
   playGame(event, gameId) {
@@ -40,7 +55,7 @@ class PortfolioPage extends React.Component {
   }
 
   render() {
-    const { games } = this.state;
+    const { games, snackbar } = this.state;
     return (
       <div className="portfolio">
         <div className="portfolio__items">
@@ -77,6 +92,7 @@ class PortfolioPage extends React.Component {
             })}
           </ul>
         </div>
+        <Snackbar message={snackbar.message} show={snackbar.show} />
       </div>
     );
   }

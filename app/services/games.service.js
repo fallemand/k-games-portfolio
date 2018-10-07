@@ -7,7 +7,7 @@ const baseUrl = 'http://royal1.midasplayer.com/images/games/';
  * @param {String} query to filter - [optional]
  * @returns {Array} list of games
  */
-const addImagesAttributes = game => ({
+const addImageAttributes = game => ({
   name: game.name,
   short: game.short,
   url: game.url,
@@ -50,7 +50,7 @@ const getGames = ({ filter, sort, page, pageSize }) => {
   }
 
   return {
-    games: paginatedGames.map(game => addImagesAttributes(game)),
+    games: paginatedGames.map(game => addImageAttributes(game)),
     total: filteredGames.length,
   };
 };
@@ -60,7 +60,7 @@ const getGames = ({ filter, sort, page, pageSize }) => {
  * @param {id} short name of the game
  * @returns {Object} games: list of games, total: total games
  */
-const getGame = id => addImagesAttributes(games.find(game => game.short === id));
+const getGame = id => addImageAttributes(games.find(game => game.short === id));
 
 export default {
   getGame,

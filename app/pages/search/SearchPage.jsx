@@ -50,11 +50,12 @@ class SearchPage extends React.Component {
   }
 
   onCardButtonPressed(action, gameKey) {
+    const { history } = this.props;
     let portfolio;
     switch (action) {
       case 'add': portfolio = portfolioService.add(gameKey); break;
       case 'remove': portfolio = portfolioService.remove(gameKey); break;
-      case 'play': portfolioService.addGame(gameKey); break;
+      case 'play': history.push(`/games/${gameKey}`); break;
       default: console.error('invalid action', action);
     }
     this.setState({
