@@ -1,4 +1,4 @@
-$filter-color: #fff;
+$filter-color: $font-color-secondary;
 $filter-field-background: #c73473;
 $filter-width: 160px;
 
@@ -11,8 +11,8 @@ $filter-width: 160px;
 
 .filter {
   width: 100%;
-  border-radius: 4px;
-  background-color: #fa4092;
+  border-radius: $border-radius;
+  background-color: $background-color-tertiary;
   padding: 20px;
 
   .filter__fieldset {

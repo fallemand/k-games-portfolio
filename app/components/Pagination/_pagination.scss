@@ -4,7 +4,6 @@
   display: inline-block;
 
   .pagination__number {
-    color: $font-color-primary;
     font-weight: $font-light;
     float: left;
     color: white;
@@ -19,7 +18,7 @@
     border-radius: 50px;
 
     &.pagination__number--active {
-      background-color: $background-color-secondary;
+      background-color: $background-color-active;
       border: 3px solid $background-color-primary;
       font-weight: $font-bold;
       padding: 8px 16px;
