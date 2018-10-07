@@ -24,11 +24,26 @@ $button-gradient: linear-gradient(180deg, hsla(0,0%,100%,.3), hsla(0,0%,100%,0))
       list-style: none;
       background-color: #f7f7f7;
       border-bottom: 1px dotted #ccc;
-      padding: 15px 20px;
+      padding: 0;
       color: #595554;
 
       &:nth-child(odd) {
         background: #fff;
+      }
+    }
+
+    .portfolio__item-link {
+      background: transparent;
+      border: 0;
+      width: 100%;
+      text-align: left;
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: background $transition-fast, color $transition-fast;
+
+      &:hover {
+        background-color: #fa4092;
+        color: #fff;
       }
     }
 

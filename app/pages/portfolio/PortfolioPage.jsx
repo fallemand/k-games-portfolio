@@ -8,9 +8,16 @@ import gamesService from '../../services/games.service';
 class PortfolioPage extends React.Component {
   constructor(props) {
     super(props);
+    this.handleGameClick = this.handleGameClick.bind(this);
     this.state = {
       games: portfolioService.getGames(),
     };
+  }
+
+  handleGameClick(event, gameId) {
+    event.preventDefault();
+    const { history } = this.props;
+    history.push(`/games/${gameId}`);
   }
 
   render() {
@@ -24,16 +31,18 @@ class PortfolioPage extends React.Component {
               const gameInfo = gamesService.getGame(game);
               return (
                 <li className="portfolio__item">
-                  <img className="portfolio__item-img" src={gameInfo.images.iconM} alt={gameInfo.name} />
-                  <h3 className="portfolio__item-name">{gameInfo.name}</h3>
-                  <div className="portfolio__item-actions">
-                    <button type="button" className="game-card__button game-card__button--remove">
-                      Remove from Portfolio
-                    </button>
-                    <button type="button" className="game-card__button game-card__button--play">
-                      Play
-                    </button>
-                  </div>
+                  <button type="button" className="portfolio__item-link" onClick={evt => this.handleGameClick(evt, gameInfo.short)}>
+                    <img className="portfolio__item-img" src={gameInfo.images.iconM} alt={gameInfo.name} />
+                    <h3 className="portfolio__item-name">{gameInfo.name}</h3>
+                    <div className="portfolio__item-actions">
+                      <button type="button" className="game-card__button game-card__button--remove">
+                        Remove from Portfolio
+                      </button>
+                      <button type="button" className="game-card__button game-card__button--play">
+                        Play
+                      </button>
+                    </div>
+                  </button>
                 </li>
               );
             })}
