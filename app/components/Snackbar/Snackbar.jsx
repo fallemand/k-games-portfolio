@@ -8,7 +8,9 @@ const Snackbar = ({ className, show, message }) => (
     role="alert"
     className={classnames(className, 'snackbar', { 'snackbar--show': show })}
   >
-    {message}
+    <span className="snackbar__message">
+      {message}
+    </span>
   </div>
 );
 

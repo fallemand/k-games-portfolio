@@ -74,12 +74,14 @@ class PortfolioPage extends React.Component {
                     <h3 className="portfolio__item-name">{gameInfo.name}</h3>
                     <div className="portfolio__item-actions">
                       <Button
+                        className="portfolio__item-action"
                         onClick={evt => this.removeGame(evt, gameInfo.short)}
                         color={Button.colors.DEFAULT}
                       >
-                        Remove Portfolio
+                        Remove
                       </Button>
                       <Button
+                        className="portfolio__item-action"
                         onClick={() => this.playGame(gameInfo.short)}
                         color={Button.colors.BLUE}
                       >

@@ -1,0 +1,39 @@
+.game-card {
+  width: 500px;
+  height: 220px;
+
+  &:nth-child(odd) {
+    margin-right: 40px;
+  }
+
+  .game-card__image {
+    height: 100%;
+    width: auto;
+    transition: filter $transition;
+  }
+
+  .game-card__description {
+    padding: 10px 20px;
+    height: 160px;
+    transform: translate3d(0, -50px, 0);
+    transition: all $transition;
+  }
+
+  .game-card__button {
+    width: 150px;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 10px 0 rgba( 0, 0, 0, 0.3);
+
+    .game-card__description {
+      transform: translate3d(0, -110px, 0);
+      z-index: 100;
+      background-color: $card-background--color-hover;
+    }
+    .game-card__image {
+      filter: blur(3px);
+    }
+  }
+}

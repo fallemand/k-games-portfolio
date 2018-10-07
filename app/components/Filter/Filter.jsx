@@ -30,7 +30,7 @@ class Filter extends React.Component {
   render() {
     const { className, filter, sort } = this.props;
     const sortOrderFields = Object.entries(Filter.sort).map(
-      ([key, value]) => ({ label: key, value }),
+      ([key, value]) => ({ label: value, value }),
     );
     return (
       <form className={classnames(className, 'filter')}>
@@ -38,7 +38,7 @@ class Filter extends React.Component {
           <legend className="filter__legend" id="name">Name</legend>
           <input
             className="filter__field"
-            placeholder="Game Name"
+            placeholder="Game name"
             type="text"
             value={filter}
             onChange={this.handleQueryChange}
@@ -65,9 +65,9 @@ class Filter extends React.Component {
 }
 
 Filter.sort = {
-  ASC: 'ASC',
-  DESC: 'DESC',
-  RANDOM: 'RANDOM',
+  ASC: 'ascendant',
+  DESC: 'descendant',
+  RANDOM: 'random',
 };
 
 Filter.propTypes = {

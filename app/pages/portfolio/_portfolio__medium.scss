@@ -1,0 +1,30 @@
+.portfolio {
+  .portfolio__item-actions {
+    width: inherit;
+  }
+
+  .portfolio__item-link {
+    text-align: left;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background $transition-fast, color $transition-fast;
+
+    &:hover {
+      background-color: #c73473;
+      color: $font-color-secondary;
+    }
+  }
+
+  .portfolio__item-name {
+    display: inline-block;
+  }
+
+  .portfolio__item-actions {
+    width: 350px;
+    margin-top: 5px;
+  }
+
+  .portfolio__item-action {
+    width: 160px;
+  }
+}

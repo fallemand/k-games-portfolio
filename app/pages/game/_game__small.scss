@@ -1,24 +1,19 @@
 .game {
   background: $background-color-tertiary;
-  border: 3px solid $background-color-tertiary;
+  border: 6px solid $background-color-tertiary;
   border-radius: $border-radius;
 
   .game__title {
     color: $font-color-secondary;
     text-align: center;
+    margin: 10px 0 15px;
     font-weight: $font-bold;
     font-size: $font-size-32;
     padding-top: 5px;
   }
 
   .game__header {
-    position: relative;
-  }
-
-  .game__button {
-    position: absolute;
-    top: 2px;
-    right: 20px;
+    text-align: center;
   }
 
   .game__play {

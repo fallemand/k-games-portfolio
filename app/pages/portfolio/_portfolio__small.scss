@@ -12,7 +12,7 @@ $card-background--color-hover: rgba(255, 255, 255, 0.95);
   }
   .portfolio__items {
     background: $background-color-tertiary;
-    border: 3px solid $background-color-tertiary;
+    border: 10px solid $background-color-tertiary;
     border-radius: $border-radius;
   }
   .portfolio__items-list {
@@ -37,26 +37,26 @@ $card-background--color-hover: rgba(255, 255, 255, 0.95);
     background: transparent;
     border: 0;
     width: 100%;
-    text-align: left;
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: background $transition-fast, color $transition-fast;
+    text-align: center;
+    padding: 15px 10px;
+  }
 
-    &:hover {
-      background-color: #c73473;
-      color: $font-color-secondary;
-    }
+
+  .portfolio__item-action {
+    width: 46%;
+    margin: 0 2%;
   }
 
   .portfolio__item-name {
     margin: 11px 20px;
-    display: inline-block;
+    display: block;
     vertical-align: top;
     font-size: 20px;
   }
 
   .portfolio__item-actions {
     float: right;
+    width: 100%;
   }
 
   .portfolio__items-no-items {

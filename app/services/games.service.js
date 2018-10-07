@@ -34,9 +34,9 @@ const getGames = ({ filter, sort, page, pageSize }) => {
   if (sort) {
     filteredGames.sort((a, b) => {
       switch (sort) {
-        case 'RANDOM': return 0.5 - Math.random();
-        case 'ASC': return a.name.localeCompare(b.name);
-        case 'DESC': return a.name.localeCompare(b.name) * -1;
+        case 'random': return 0.5 - Math.random();
+        case 'ascendant': return a.name.localeCompare(b.name);
+        case 'descendant': return a.name.localeCompare(b.name) * -1;
         default: return 0;
       }
     });

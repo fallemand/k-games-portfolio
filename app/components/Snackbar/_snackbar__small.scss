@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+.snackbar {
+  visibility: hidden;
+  width: 100%;
+  background-color: $background-color-secondary;
+  text-align: center;
+  border-radius: $border-radius;
+  padding: 30px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+
+  .snackbar__message {
+    color: $font-color-secondary;
+    font-size: $font-size-18;
+  }
+
+  &.snackbar--show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @-webkit-keyframes fadein {
+    from {bottom: -80px; opacity: 0;}
+    to {bottom: 0; opacity: 1;}
+  }
+
+  @keyframes fadein {
+    from {bottom: -80px; opacity: 0;}
+    to {bottom: 0; opacity: 1;}
+  }
+
+  @-webkit-keyframes fadeout {
+    from {bottom: 0; opacity: 1;}
+    to {bottom: -80px; opacity: 0;}
+  }
+
+  @keyframes fadeout {
+    from {bottom: 0; opacity: 1;}
+    to {bottom: -80px; opacity: 0;}
+  }
+}

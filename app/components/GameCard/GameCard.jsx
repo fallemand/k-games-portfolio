@@ -11,17 +11,29 @@ const GameCard = ({ className, game, onAction, actions }) => (
       <h3 className="game-card__title">{game.name}</h3>
       <div className="game-card__actions">
         {actions.includes('add') && (
-          <Button onClick={() => onAction('add', game.short)} color={Button.colors.GREEN}>
+          <Button
+            onClick={() => onAction('add', game.short)}
+            color={Button.colors.GREEN}
+            className="game-card__button"
+          >
             Add to Portfolio
           </Button>
         )}
         {actions.includes('remove') && (
-          <Button onClick={() => onAction('remove', game.short)} color={Button.colors.DEFAULT}>
-            Remove from Portfolio
+          <Button
+            onClick={() => onAction('remove', game.short)}
+            color={Button.colors.DEFAULT}
+            className="game-card__button"
+          >
+            Remove
           </Button>
         )}
         {actions.includes('play') && (
-          <Button onClick={() => onAction('play', game.short)} color={Button.colors.BLUE}>
+          <Button
+            onClick={() => onAction('play', game.short)}
+            color={Button.colors.BLUE}
+            className="game-card__button"
+          >
             Play
           </Button>
         )}

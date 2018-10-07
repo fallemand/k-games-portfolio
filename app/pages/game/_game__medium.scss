@@ -1,4 +1,19 @@
 .game {
   max-width: 770px;
   margin: 0 auto;
+
+  .game__header {
+    position: relative;
+    text-align: left;
+  }
+
+  .game__title {
+    margin: 20px 0 25px;
+  }
+
+  .game__button {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+  }
 }

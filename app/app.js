@@ -6,7 +6,7 @@ import { render } from 'react-dom';
 import SearchPage from './pages/search/SearchPage';
 import PortfolioPage from './pages/portfolio/PortfolioPage';
 import GamePage from './pages/game/GamePage';
-
+import './assets/scripts/headerActions';
 import './assets/images/logo.svg';
 import './styles/_common.scss';
 

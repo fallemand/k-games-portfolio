@@ -79,7 +79,7 @@ class SearchPage extends React.Component {
     setTimeout(() => {
       snackbar.show = false;
       this.setState({ snackbar });
-    }, 2000);
+    }, 3000);
   }
 
   getListItems(params) {
