@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './portfolio.scss';
+import Button from '../../components/Button';
 import portfolioService from '../../services/portfolio.service';
 import gamesService from '../../services/games.service';
 
@@ -9,6 +10,8 @@ class PortfolioPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleGameClick = this.handleGameClick.bind(this);
+    this.removeGame = this.removeGame.bind(this);
+    this.playGame = this.playGame.bind(this);
     this.state = {
       games: portfolioService.getGames(),
     };
@@ -28,12 +31,20 @@ class PortfolioPage extends React.Component {
     });
   }
 
+  playGame(event, gameId) {
+    event.stopPropagation();
+    const games = portfolioService.remove(gameId);
+    this.setState({
+      games,
+    });
+  }
+
   render() {
     const { games } = this.state;
     return (
       <div className="portfolio">
-        <h1 className="portfolio__title"> Portfolio </h1>
         <div className="portfolio__items">
+          <h1 className="portfolio__title">Portfolio</h1>
           <ul className="portfolio__items-list">
             { games.map((game) => {
               const gameInfo = gamesService.getGame(game);
@@ -43,12 +54,12 @@ class PortfolioPage extends React.Component {
                     <img className="portfolio__item-img" src={gameInfo.images.iconM} alt={gameInfo.name} />
                     <h3 className="portfolio__item-name">{gameInfo.name}</h3>
                     <div className="portfolio__item-actions">
-                      <button type="button" onClick={(evt) => this.removeGame(evt, gameInfo.short)} className="game-card__button game-card__button--remove">
-                        Remove from Portfolio
-                      </button>
-                      <button type="button" className="game-card__button game-card__button--play">
+                      <Button onClick={() => this.removeGame(gameInfo.short)} color={Button.colors.DEFAULT}>
+                        Remove Portfolio
+                      </Button>
+                      <Button onClick={() => this.playGame(gameInfo.short)} color={Button.colors.BLUE}>
                         Play
-                      </button>
+                      </Button>
                     </div>
                   </button>
                 </li>
