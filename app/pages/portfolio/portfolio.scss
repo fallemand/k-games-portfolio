@@ -1,0 +1,6 @@
+@import '../../styles/variables';
+@import './portfolio__small';
+
+@media ( min-width: $breakpoint-desktop ) {
+  @import './portfolio__medium';
+}

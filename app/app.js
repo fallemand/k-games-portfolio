@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import { render } from 'react-dom';
 import SearchPage from './pages/search/SearchPage';
+import PortfolioPage from './pages/portfolio/PortfolioPage';
 
 import './assets/images/logo.svg';
 import './styles/_common.scss';
@@ -16,6 +17,7 @@ render((
     <Switch>
       <Route exact path="/" render={() => <div>Initial Page</div>} />
       <Route exact path="/search" component={SearchPage} />
+      <Route exact path="/portfolio" component={PortfolioPage} />
     </Switch>
   </Router>
 ), document.getElementById('root-app'));

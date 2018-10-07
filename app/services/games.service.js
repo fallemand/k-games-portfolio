@@ -7,21 +7,19 @@ const baseUrl = 'http://royal1.midasplayer.com/images/games/';
  * @param {String} query to filter - [optional]
  * @returns {Array} list of games
  */
-const addImagesAttributes = array => (
-  array.map(game => ({
-    name: game.name,
-    short: game.short,
-    url: game.url,
-    images: {
-      screenshot: `${baseUrl}${game.short}/dumps/screen_${game.short}.gif`,
-      iconS: `${baseUrl}${game.short}/${game.short}_60x60.gif`,
-      iconM: `${baseUrl}${game.short}/${game.short}_81x46.gif`,
-      iconL: `${baseUrl}${game.short}/${game.short}_170x80.gif`,
-      banner: `${baseUrl}${game.short}/tournamentPage/${game.short}_764x260.jpg`,
-      character: `https://k1.midasplayer.com/images/games/${game.short}/gameAssets/decorRight.png`,
-    },
-  }))
-);
+const addImagesAttributes = game => ({
+  name: game.name,
+  short: game.short,
+  url: game.url,
+  images: {
+    screenshot: `${baseUrl}${game.short}/dumps/screen_${game.short}.gif`,
+    iconS: `${baseUrl}${game.short}/${game.short}_60x60.gif`,
+    iconM: `${baseUrl}${game.short}/${game.short}_81x46.gif`,
+    iconL: `${baseUrl}${game.short}/${game.short}_170x80.gif`,
+    banner: `${baseUrl}${game.short}/tournamentPage/${game.short}_764x260.jpg`,
+    character: `https://k1.midasplayer.com/images/games/${game.short}/gameAssets/decorRight.png`,
+  },
+});
 
 /**
  * Get games list from json mock
@@ -52,11 +50,19 @@ const getGames = ({ filter, sort, page, pageSize }) => {
   }
 
   return {
-    games: addImagesAttributes(paginatedGames),
+    games: paginatedGames.map(game => addImagesAttributes(game)),
     total: filteredGames.length,
   };
 };
 
+/**
+ * Get game by id.
+ * @param {id} short name of the game
+ * @returns {Object} games: list of games, total: total games
+ */
+const getGame = id => addImagesAttributes(games.find(game => game.short === id));
+
 export default {
+  getGame,
   getGames,
 };
