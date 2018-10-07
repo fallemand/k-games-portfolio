@@ -63,6 +63,9 @@ class SearchPage extends React.Component {
   }
 
   getListItems(params) {
+    this.setState({
+      loading: true,
+    });
     const { total, games } = gamesService.getGames(params);
     this.setQueryParams(params);
     this.setState({
@@ -70,6 +73,11 @@ class SearchPage extends React.Component {
       games,
       total,
     });
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+      });
+    }, 2000);
   }
 
   getParamsFromUrl() {
@@ -100,16 +108,16 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    const { games, filter, sort, page, total, portfolio } = this.state;
+    const { games, filter, sort, page, total, portfolio, loading } = this.state;
     const { history } = this.props;
     return (
-      <div className="games">
-        <div className="games__actions">
+      <div className="search">
+        <div className="search__actions">
           <Filter onChange={this.onFilterChange} filter={filter} sort={sort} />
         </div>
         <div className={classnames(
-          'games__list',
-          { 'games__list--loading': false },
+          'search__list',
+          { 'search__list--loading': loading },
         )}
         >
           {games.map(game => (
@@ -121,7 +129,7 @@ class SearchPage extends React.Component {
           ))}
         </div>
         <Pagination
-          className="games__pagination"
+          className="search__pagination"
           active={parseInt(page, 10)}
           total={total}
           show={this.pageSize}

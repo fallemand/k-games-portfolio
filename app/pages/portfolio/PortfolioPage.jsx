@@ -20,6 +20,14 @@ class PortfolioPage extends React.Component {
     history.push(`/games/${gameId}`);
   }
 
+  removeGame(event, gameId) {
+    event.stopPropagation();
+    const games = portfolioService.remove(gameId);
+    this.setState({
+      games,
+    });
+  }
+
   render() {
     const { games } = this.state;
     return (
@@ -35,7 +43,7 @@ class PortfolioPage extends React.Component {
                     <img className="portfolio__item-img" src={gameInfo.images.iconM} alt={gameInfo.name} />
                     <h3 className="portfolio__item-name">{gameInfo.name}</h3>
                     <div className="portfolio__item-actions">
-                      <button type="button" className="game-card__button game-card__button--remove">
+                      <button type="button" onClick={(evt) => this.removeGame(evt, gameInfo.short)} className="game-card__button game-card__button--remove">
                         Remove from Portfolio
                       </button>
                       <button type="button" className="game-card__button game-card__button--play">
