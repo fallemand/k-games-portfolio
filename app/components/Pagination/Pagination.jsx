@@ -3,8 +3,17 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import './_pagination.scss';
 
+const pagination = (currentPage, totalPages) => {
+  const delta = 2;
+  const left = currentPage - delta;
+  const right = currentPage + delta + 1;
+  return Array.from({ length: totalPages }, (v, k) => k + 1)
+    .filter(i => i && i >= left && i < right);
+};
+
 const Pagination = ({ className, total, show, onChange, active }) => {
   const pages = Math.ceil(total / show);
+  const pagesToShow = pagination(active, pages);
   return (
     <div className={classnames(className, 'pagination')}>
       <button
@@ -15,7 +24,7 @@ const Pagination = ({ className, total, show, onChange, active }) => {
       >
         &laquo;
       </button>
-      {Array.from(Array(pages), (x, i) => i + 1).map(
+      {pagesToShow.map(
         pageNumber => (
           <button
             type="button"
