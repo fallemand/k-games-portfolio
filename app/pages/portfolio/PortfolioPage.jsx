@@ -12,7 +12,6 @@ class PortfolioPage extends React.Component {
     super(props);
     this.handleGameClick = this.handleGameClick.bind(this);
     this.removeGame = this.removeGame.bind(this);
-    this.playGame = this.playGame.bind(this);
     this.state = {
       games: portfolioService.getGames(),
       snackbar: {
@@ -46,14 +45,6 @@ class PortfolioPage extends React.Component {
     }, 3000);
   }
 
-  playGame(event, gameId) {
-    event.stopPropagation();
-    const games = portfolioService.remove(gameId);
-    this.setState({
-      games,
-    });
-  }
-
   render() {
     const { games, snackbar } = this.state;
     return (
@@ -82,7 +73,7 @@ class PortfolioPage extends React.Component {
                       </Button>
                       <Button
                         className="portfolio__item-action"
-                        onClick={() => this.playGame(gameInfo.short)}
+                        onClick={evt => this.handleGameClick(evt, gameInfo.short)}
                         color={Button.colors.BLUE}
                       >
                         Play
