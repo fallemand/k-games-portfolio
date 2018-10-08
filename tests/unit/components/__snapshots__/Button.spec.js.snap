@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render with props 1`] = `
+"<button type='button' className='__CLASSNAME__ button button--green' onClick={[Function: mockConstructor]}>
+  __TEST__
+</button>"
+`;

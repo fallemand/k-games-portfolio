@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameCard render with props 1`] = `
+"<div className='__CLASSNAME__ game-card'>
+  <img className='game-card__image' src='__BANNERURL__' alt='__NAME__' />
+  <div className='game-card__description'>
+    <h3 className='game-card__title'>
+      __NAME__
+    </h3>
+    <div className='game-card__actions'>
+      <Button onClick={[Function: onClick]} color='blue' className='game-card__button'>
+        Play
+      </Button>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`GameCard should change buttons according to actions 1`] = `
+"<div className='__CLASSNAME__ game-card'>
+  <img className='game-card__image' src='__BANNERURL__' alt='__NAME__' />
+  <div className='game-card__description'>
+    <h3 className='game-card__title'>
+      __NAME__
+    </h3>
+    <div className='game-card__actions'>
+      <Button onClick={[Function: onClick]} color='default' className='game-card__button'>
+        Remove
+      </Button>
+      <Button onClick={[Function: onClick]} color='blue' className='game-card__button'>
+        Play
+      </Button>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`GameCard should change buttons according to actions 2`] = `
+"<div className='__CLASSNAME__ game-card'>
+  <img className='game-card__image' src='__BANNERURL__' alt='__NAME__' />
+  <div className='game-card__description'>
+    <h3 className='game-card__title'>
+      __NAME__
+    </h3>
+    <div className='game-card__actions'>
+      <Button onClick={[Function: onClick]} color='green' className='game-card__button'>
+        Add to Portfolio
+      </Button>
+      <Button onClick={[Function: onClick]} color='blue' className='game-card__button'>
+        Play
+      </Button>
+    </div>
+  </div>
+</div>"
+`;

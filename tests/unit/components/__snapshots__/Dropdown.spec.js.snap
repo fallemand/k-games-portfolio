@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown render with props 1`] = `
+"<select className='__CLASSNAME__ dropdown' name='__NAME__' onChange={[Function: bound handleChange]}>
+  <option value='' disabled={true} selected={true}>
+    __TITLE__
+  </option>
+  <option value='VALUE1' disabled={[undefined]} selected={false}>
+    LABEL1
+  </option>
+  <option value='VALUE2' disabled={true} selected={false}>
+    LABEL2
+  </option>
+  <option value='VALUE3' disabled={[undefined]} selected={false}>
+    LABEL3
+  </option>
+</select>"
+`;
+
+exports[`Dropdown render with selected value 1`] = `
+"<select className='__CLASSNAME__ dropdown' name='__NAME__' onChange={[Function: bound handleChange]}>
+  <option value='' disabled={true} selected={false}>
+    __TITLE__
+  </option>
+  <option value='VALUE1' disabled={[undefined]} selected={false}>
+    LABEL1
+  </option>
+  <option value='VALUE2' disabled={true} selected={false}>
+    LABEL2
+  </option>
+  <option value='VALUE3' disabled={[undefined]} selected={true}>
+    LABEL3
+  </option>
+</select>"
+`;
