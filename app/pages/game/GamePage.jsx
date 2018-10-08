@@ -5,7 +5,7 @@ import './game.scss';
 import portfolioService from '../../services/portfolio.service';
 import gamesService from '../../services/games.service';
 import Button from '../../components/Button';
-import Snackbar from "../../components/Snackbar";
+import Snackbar from '../../components/Snackbar';
 
 class GamePage extends React.Component {
   constructor(props) {
@@ -86,7 +86,6 @@ class GamePage extends React.Component {
 
 GamePage.propTypes = {
   history: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
   match: PropTypes.object.isRequired,
 };
 

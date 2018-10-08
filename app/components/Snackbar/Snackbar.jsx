@@ -17,12 +17,13 @@ const Snackbar = ({ className, show, message }) => (
 Snackbar.propTypes = {
   className: PropTypes.string,
   show: PropTypes.bool,
-  message: PropTypes.string.isRequired,
+  message: PropTypes.string,
 };
 
 Snackbar.defaultProps = {
   className: null,
   show: false,
+  message: '',
 };
 
 export default Snackbar;
