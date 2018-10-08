@@ -72,7 +72,7 @@ Filter.sort = {
 
 Filter.propTypes = {
   className: PropTypes.string,
-  sort: PropTypes.oneOfType(Object.values(Filter.sort)),
+  sort: PropTypes.oneOf(Object.values(Filter.sort)),
   onChange: PropTypes.func.isRequired,
   filter: PropTypes.oneOfType([
     PropTypes.string,

@@ -22,7 +22,7 @@ Button.colors = {
 
 Button.propTypes = {
   className: PropTypes.string,
-  color: PropTypes.oneOfType(Object.values(Button.colors)),
+  color: PropTypes.oneOf(Object.values(Button.colors)),
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
 };
