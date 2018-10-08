@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination render with props 1`] = `
+"<div className='__CLASSNAME__ pagination'>
+  <button type='button' disabled={false} className='pagination__number' onClick={[Function: onClick]}>
+    «
+  </button>
+  <button type='button' className='pagination__number' onClick={[Function: onClick]}>
+    3
+  </button>
+  <button type='button' className='pagination__number' onClick={[Function: onClick]}>
+    4
+  </button>
+  <button type='button' className='pagination__number pagination__number--active' onClick={[Function: onClick]}>
+    5
+  </button>
+  <button type='button' className='pagination__number' onClick={[Function: onClick]}>
+    6
+  </button>
+  <button type='button' className='pagination__number' onClick={[Function: onClick]}>
+    7
+  </button>
+  <button type='button' className='pagination__number' disabled={false} onClick={[Function: onClick]}>
+    »
+  </button>
+</div>"
+`;
