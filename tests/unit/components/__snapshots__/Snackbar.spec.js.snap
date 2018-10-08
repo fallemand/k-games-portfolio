@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render with show:false 1`] = `
+"<div role='alert' className='__CLASSNAME__ snackbar'>
+  <span className='snackbar__message'>
+    __MESSAGE__
+  </span>
+</div>"
+`;
+
+exports[`Button render with show:true 1`] = `
+"<div role='alert' className='__CLASSNAME__ snackbar snackbar--show'>
+  <span className='snackbar__message'>
+    __MESSAGE__
+  </span>
+</div>"
+`;
