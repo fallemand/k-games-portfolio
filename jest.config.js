@@ -4,7 +4,7 @@ module.exports = {
   testRegex: '\\/tests\\/unit\\/.*(test|spec)\\.jsx?$',
   collectCoverage: true,
   coverageReporters: [
-    'json',
+    'html',
   ],
   moduleNameMapper: {
     '\\.(css|scss)$': '<rootDir>/tests/unit/setup/styleMock.js',
