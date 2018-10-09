@@ -1,0 +1,64 @@
+$filter-color: $font-color-secondary;
+$filter-field-background: #c73473;
+$filter-width: 65%;
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+.filter {
+  width: 100%;
+  border-radius: $border-radius;
+  background-color: $background-color-tertiary;
+  padding: 10px;
+
+  .filter__fieldset {
+    border: 0;
+    display: inline-block;
+    text-align: right;
+    padding: 0 10px;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .filter__legend {
+    margin: 4px 0;
+    float: left;
+    color: $filter-color;
+    font-size: $font-size-16;
+    font-weight: $font-light;
+  }
+
+  .filter__field {
+    -webkit-appearance: none;
+    margin: 0;
+    border: 0;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    color: $filter-color;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: $filter-field-background;
+    width: $filter-width;
+  }
+
+  .filter__button {
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.22);
+    border-radius: 999px;
+    color: $filter-color;
+    font-weight: $font-light;
+    font-size: $font-size-16;
+    padding: 6px 0 8px;
+    background: $filter-field-background;
+    border: 0;
+    width: $filter-width;
+  }
+
+  @include placeholder {
+    color: #ffc6df;
+  }
+}

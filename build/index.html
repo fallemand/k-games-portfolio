@@ -2,12 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <title>King - Games Portfolio</title>
   <link rel="shortcut icon" href="/favicon.png"><link href="/bundle.css" rel="stylesheet"></head>
   <body>
-    <main class="container" id="root-app"></main>
-  <script type="text/javascript" src="/bundle.js"></script></body>
+    <header class="header">
+      <div class="header__hamburger">
+        <div class="header__hamburger-line"></div>
+        <div class="header__hamburger-line"></div>
+        <div class="header__hamburger-line"></div>
+      </div>
+      <nav class="header__container">
+        <a href="#/search" class="header__link">Search Games</a>
+        <a href="#/portfolio" class="header__link">Portfolio</a>
+      </nav>
+      <img class="header__logo" src="/assets/logo.svg" alt="logo">
+    </header>
+
+    <!-- React App-->
+    <main class="main">
+      <div class="main__container" id="root-app"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__disclaimer">
+        © 2018 Demo - This is just a demo app. Nothing of what is shown here is real.
+      </div>
+    </footer>
+  <script src="/bundle.js"></script></body>
 </html>

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PortfolioPage render with props 1`] = `
+"<div className='portfolio'>
+  <div className='portfolio__items'>
+    <h1 className='portfolio__title'>
+      Portfolio
+    </h1>
+    <ul className='portfolio__items-list'>
+      <li className='portfolio__item'>
+        <div className='portfolio__item-content'>
+          <img className='portfolio__item-img' src={[undefined]} alt='__NAME__' />
+          <h3 className='portfolio__item-name'>
+            __NAME__
+          </h3>
+          <div className='portfolio__item-actions'>
+            <Button className='portfolio__item-action' onClick={[Function: onClick]} color='default'>
+              Remove
+            </Button>
+            <Button className='portfolio__item-action' onClick={[Function: onClick]} color='blue'>
+              Play
+            </Button>
+          </div>
+        </div>
+      </li>
+      <li className='portfolio__item'>
+        <div className='portfolio__item-content'>
+          <img className='portfolio__item-img' src={[undefined]} alt='__NAME__' />
+          <h3 className='portfolio__item-name'>
+            __NAME__
+          </h3>
+          <div className='portfolio__item-actions'>
+            <Button className='portfolio__item-action' onClick={[Function: onClick]} color='default'>
+              Remove
+            </Button>
+            <Button className='portfolio__item-action' onClick={[Function: onClick]} color='blue'>
+              Play
+            </Button>
+          </div>
+        </div>
+      </li>
+      <li className='portfolio__item'>
+        <div className='portfolio__item-content'>
+          <img className='portfolio__item-img' src={[undefined]} alt='__NAME__' />
+          <h3 className='portfolio__item-name'>
+            __NAME__
+          </h3>
+          <div className='portfolio__item-actions'>
+            <Button className='portfolio__item-action' onClick={[Function: onClick]} color='default'>
+              Remove
+            </Button>
+            <Button className='portfolio__item-action' onClick={[Function: onClick]} color='blue'>
+              Play
+            </Button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <Snackbar message='' show={false} className={{...}} />
+</div>"
+`;
+
+exports[`PortfolioPage render without games in portfolio 1`] = `
+"<div className='portfolio'>
+  <div className='portfolio__items'>
+    <h1 className='portfolio__title'>
+      Portfolio
+    </h1>
+    <ul className='portfolio__items-list' />
+    <div className='portfolio__items-no-items'>
+      You have no games in your portfolio!
+    </div>
+  </div>
+  <Snackbar message='' show={false} className={{...}} />
+</div>"
+`;

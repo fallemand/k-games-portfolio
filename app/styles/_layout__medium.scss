@@ -1,0 +1,57 @@
+.header {
+  height: 76px;
+
+  .header__logo {
+    left: 50%;
+    margin-left: -40px;
+    width: 80px;
+  }
+
+  .header__hamburger {
+    display: none;
+  }
+
+  .header__container {
+    display: block;
+    max-width: 1200px;
+    padding: 25px 80px 28px;
+    position: absolute;
+    background-color: transparent;
+    margin-left: 0;
+    top: 0;
+    left: 0;
+    height: auto;
+  }
+
+  .header__link {
+    color: $header-color;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    transition: color $transition;
+
+    &:after {
+      content: '';
+      background-color: $header-color-active;
+      left: 50%;
+      right: 50%;
+      bottom: -8px;
+      position: absolute;
+      transition: left $transition, right $transition;
+    }
+
+    &.header__link--active,
+    &:hover {
+      color: $header-color-active;
+      position: relative;
+
+      &:after {
+        height: 3px;
+        left: 20%;
+        right: 20%;
+        border-radius: 10%;
+      }
+    }
+  }
+}

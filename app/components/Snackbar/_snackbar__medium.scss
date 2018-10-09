@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.snackbar {
+  width: 400px;
+  margin-left: -200px;
+  padding: 16px;
+  left: 50%;
+  bottom: 80px;
+
+  .snackbar__message {
+    font-size: $font-size-16;
+  }
+
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 80px; opacity: 1;}
+  }
+
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 80px; opacity: 1;}
+  }
+
+  @-webkit-keyframes fadeout {
+    from {bottom: 80px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  @keyframes fadeout {
+    from {bottom: 80px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+}

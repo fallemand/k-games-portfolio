@@ -1,0 +1,30 @@
+$filter-width: 160px;
+
+.filter {
+  margin: 0 auto 20px;
+  padding: 20px;
+
+  .filter__fieldset {
+    width: auto;
+    margin: 0;
+    padding: 0 25px;
+  }
+
+  .filter__legend {
+    font-size: $font-size-18;
+    padding-right: 20px;
+  }
+
+  .filter__field {
+    width: $filter-width;
+    padding: 8px;
+    font-size: $font-size-14;
+    height: inherit;
+  }
+
+  .filter__button {
+    width: $filter-width;
+    cursor: pointer;
+    font-size: $font-size-14;
+  }
+}

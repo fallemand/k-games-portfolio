@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+@import 'game-card__small';
+
+@media ( min-width: $breakpoint-desktop ) {
+  @import 'game-card__medium';
+}
+

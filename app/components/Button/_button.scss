@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+
+$button-green-color: #00b67d;
+$button-default-color: #666666;
+$button-blue-color: #1b3bd4;
+$button-gradient: linear-gradient(180deg, hsla(0, 0%, 100%, 0.3), hsla(0, 0%, 100%, 0));
+
+.button {
+  border-radius: 999px;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.22);
+  color: #eee;
+  font-weight: $font-light;
+  font-size: $font-size-14;
+  width: 160px;
+  margin: 0 5px;
+  padding: 8px 0 10px;
+  cursor: pointer;
+
+  &.button--green {
+    background: $button-green-color $button-gradient;
+  }
+  &.button--default {
+    background: $button-default-color $button-gradient;
+  }
+  &.button--blue {
+    background: $button-blue-color $button-gradient;
+  }
+}

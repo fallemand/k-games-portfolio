@@ -30,7 +30,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',
@@ -51,6 +51,9 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './app/index.html',
       favicon: './app/assets/images/favicon.png',
+      minify: {
+        removeScriptTypeAttributes: true,
+      },
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.css',

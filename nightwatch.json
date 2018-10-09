@@ -1,0 +1,91 @@
+{
+  "src_folders": ["./tests/e2e/groups"],
+  "output_folder": "./tests/e2e/reports/e2e",
+  "globals_path": "./tests/e2e/globals.js",
+  "page_objects_path": "./tests/e2e/pages",
+  "test_workers": {
+    "enabled": false,
+    "workers": "auto"
+  },
+  "live_output": false,
+  "selenium": {
+    "start_process": true,
+    "host" : "127.0.0.1",
+    "selenium_port": 4444,
+    "server_path": "./node_modules/selenium-standalone/.selenium/selenium-server/3.4.0-server.jar",
+    "log_path": "",
+    "cli_args": {
+      "webdriver.chrome.driver": "./node_modules/selenium-standalone/.selenium/chromedriver/2.41-x64-chromedriver"
+    }
+  },
+
+  "test_settings": {
+    "default": {
+      "skip_testcases_on_fail": true,
+      "silent": true,
+      "screenshots": {
+        "enabled": false,
+        "on_failure": true,
+        "on_error": true,
+        "path": "./tests/screenshots"
+      },
+      "disable_colors": true,
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled" : true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args": [
+            "incognito",
+            "disable-extensions",
+            "--no-sandbox"
+          ]
+        }
+      }
+    },
+
+    "desktop": {
+      "screenshots": {
+        "enabled": false,
+        "on_failure": false,
+        "on_error": false
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled" : true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args": [
+            "incognito",
+            "disable-extensions",
+            "--no-sandbox"
+          ]
+        }
+      }
+    },
+
+    "mobile": {
+      "screenshots": {
+        "enabled": false,
+        "on_failure": false,
+        "on_error": false
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled" : true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "mobileEmulation": {
+            "deviceName": "Galaxy S5"
+          },
+          "args": [
+            "incognito",
+            "disable-extensions",
+            "--no-sandbox",
+            "disable-gpu"
+          ]
+        }
+      }
+    }
+  }
+}

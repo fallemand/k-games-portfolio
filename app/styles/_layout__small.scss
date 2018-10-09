@@ -1,0 +1,69 @@
+.main,
+.header,
+.footer {
+  display: table-row;
+  width: 100%;
+}
+
+.header {
+  height: 55px;
+  background: $header-background-color radial-gradient(circle at 50% 50%, #fff, #fff 43%, hsla(0, 0%, 100%, 0));
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+
+  .header__hamburger {
+    display: inline-block;
+    padding: 20px 20px 10px;
+
+    .header__hamburger-line {
+      display: block;
+      height: 3px;
+      width: 20px;
+      background-color: #464646;
+      border-radius: 4px;
+      margin-bottom: 3px;
+    }
+  }
+
+  .header__logo {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -30px;
+    width: 60px;
+  }
+
+  .header__container {
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.95);
+    padding: 15px 40px;
+    top: 56px;
+    z-index: 1000;
+    height: 100%;
+    margin-left: -200px;
+    transition: margin $transition;
+
+    &.header__container--visible{
+      margin-left: 0;
+    }
+  }
+
+  .header__link {
+    display: block;
+    margin: 15px 0 30px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.footer {
+  text-align: center;
+  background-color: $footer-background-color;
+  color: $footer-color;
+
+  .footer__disclaimer {
+    padding: 30px;
+    font-size: $font-size-14;
+    font-weight: $font-light;
+  }
+}

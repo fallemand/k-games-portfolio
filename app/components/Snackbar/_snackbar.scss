@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+@import 'snackbar__small';
+
+@media ( min-width: $breakpoint-desktop ) {
+  @import 'snackbar__medium';
+}
+

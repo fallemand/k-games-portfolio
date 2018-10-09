@@ -10,11 +10,14 @@
     "start:dev": "NODE_ENV=development nodemon ./index.js",
     "start:debug": "NODE_ENV=development nodemon --debug-frk ./index.js",
     "start:test": "NODE_ENV=test node ./index.js",
-    "test": "npm run test:unit",
+    "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "NODE_ENV=test jest",
-    "test:e2e": "echo TODO",
+    "test:e2e": "npm run test:e2e:mobile && npm run test:e2e:desktop",
+    "test:e2e:desktop": "NODE_ENV=test NODE_TEST=e2e nightwatch -e desktop --group desktop",
+    "test:e2e:mobile": "NODE_ENV=test NODE_TEST=e2e nightwatch -e mobile --group mobile",
     "test:e2e-setup": "selenium-standalone install --version=3.4.0 --drivers.chrome.version=2.40 --singleDriverInstall=chrome",
-    "lint": "eslint --ext .jsx,.js index.js ./api ./app"
+    "lint": "eslint --ext .jsx,.js index.js ./app",
+    "postinstall": "npm run test:e2e-setup"
   },
   "repository": {
     "type": "git",
@@ -56,12 +59,14 @@
     "imagemin-webpack-plugin": "^2.3.0",
     "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.3",
+    "nightwatch": "^0.9.21",
     "node-sass": "^4.9.3",
     "nodemon": "^1.18.4",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
+    "selenium-standalone": "^6.15.3",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1"

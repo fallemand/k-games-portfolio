@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GamePage change state and render 1`] = `
+"<div className='game'>
+  <div className='game__header'>
+    <h1 className='game__title'>
+      __NAME__
+    </h1>
+    <Button className='game__button' onClick={[Function: onClick]} color='green'>
+      Add to Portfolio
+    </Button>
+  </div>
+  <div className='game__play'>
+    <img className='game__play-background' src='__SCREENSHOT-URL__' alt='__NAME__' />
+    <div className='game__play-overlay' />
+    <div className='game__play-icon'>
+      Lets Play
+    </div>
+  </div>
+  <Snackbar message='' show={false} className={{...}} />
+</div>"
+`;
+
+exports[`GamePage render with props 1`] = `
+"<div className='game'>
+  <div className='game__header'>
+    <h1 className='game__title'>
+      __NAME__
+    </h1>
+    <Button className='game__button' onClick={[Function: onClick]} color='default'>
+      Remove from Portfolio
+    </Button>
+  </div>
+  <div className='game__play'>
+    <img className='game__play-background' src='__SCREENSHOT-URL__' alt='__NAME__' />
+    <div className='game__play-overlay' />
+    <div className='game__play-icon'>
+      Lets Play
+    </div>
+  </div>
+  <Snackbar message='' show={false} className={{...}} />
+</div>"
+`;
