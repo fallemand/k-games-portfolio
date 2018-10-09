@@ -90,11 +90,13 @@ class SearchPage extends React.Component {
       games,
       total,
     });
+    // This is in order to force the loading to show for
+    // demo and wait for images to load.
     setTimeout(() => {
       this.setState({
         loading: false,
       });
-    }, 2000);
+    }, 1300);
   }
 
   getParamsFromUrl() {
