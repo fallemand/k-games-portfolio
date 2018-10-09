@@ -79,8 +79,9 @@ npm run test:unit
 npm run start:test
 ```
 #### 2) In another terminal run the tests
-**Attention:** This required JAVA 8 installed with `JAVA_HOME set
+**Attention:** This required JAVA 8 installed with `JAVA_HOME` set
 ```
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 npm run test:e2e
 ```
 
