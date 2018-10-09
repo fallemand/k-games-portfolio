@@ -2,9 +2,9 @@ const config = require('../../config');
 
 module.exports = {
   site: `${config.host}:${config.port}`,
-  environment: 'xvfb_desktop',
+  environment: 'desktop',
   waitForConditionPollInterval: 50,
   waitForConditionTimeout: 5000,
   retryAssertionTimeout: 10000,
-  screenshots: './test/e2e/screenshots/',
+  screenshots: './tests/e2e/screenshots/',
 };

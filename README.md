@@ -12,9 +12,11 @@
 
 ### Features
 - Resposive design
+- Unit testing with Jest & Enzyme
+- Functional testing with Nightwatch
 - Bundle JS - CSS (Transpile ES6 and JSX to ES5)
 - Minify CSS - JS - Images
-- Autoprefix styles for different browsers.
+- Autoprefix styles for different browsers
 - Lint JS with eslint
 - Live reload for development (nodemon)
 - Unit testing with Jest and Enzyme
@@ -31,10 +33,10 @@ All pages passed the validations without warnings
 
 ### Considerations
 **Things I would have loved to do, but I couldn't for lack of time:**  
-- Handle incorrect Ids in the App.
 - Deploy in demo server and provide public url.
 - Add Redux for state handling.  
-- Functional testing with Nightwatch
+- Add more functional tests.
+- Handle incorrect Ids in the App.
 - Generate different bundles in development (with sourcemaps, not minified, etc).
 
 ---
@@ -64,11 +66,24 @@ npm run start:dev
 npm run watch
 ```
 
-### Run Tests
-```
-npm run test
-```
 ---
+
+### Unit Tests
+```
+npm run test:unit
+```
+
+### Functional Tests
+#### 1) Run the app
+```
+npm run start:test
+```
+#### 2) In another terminal run the tests
+**Attention:** This required JAVA 8 installed with `JAVA_HOME set
+```
+npm run test:e2e
+```
+
 
 ### Author
 Made from Córdoba, Argentina :smiley:  

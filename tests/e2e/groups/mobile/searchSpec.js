@@ -15,15 +15,6 @@ module.exports = {
       .waitNoLoading()
       .expect.element('@gamesFirstChildTitle').text.to.equal('Yo-yo Jackpot');
   },
-  'Add item to portfolio': (client) => {
-    const searchPage = client.page.SearchPage();
-    searchPage
-      .hoverFirstElement(() => {
-        searchPage.expect.element('@gamesFirstChildFirstButton').text.to.equal('Add to Portfolio');
-        searchPage.click('@gamesFirstChildFirstButton');
-        searchPage.expect.element('@gamesFirstChildFirstButton').text.to.equal('Remove');
-      });
-  },
   beforeEach: (client) => {
     client.url(client.globals.site);
   },

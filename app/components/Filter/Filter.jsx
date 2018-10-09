@@ -37,6 +37,7 @@ class Filter extends React.Component {
         <fieldset className="filter__fieldset">
           <legend className="filter__legend">Name</legend>
           <input
+            name="filter"
             className="filter__field"
             placeholder="Game name"
             type="text"
