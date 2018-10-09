@@ -10,6 +10,11 @@ const app = express();
 app.use('/', express.static(path.join(__dirname, './build')));
 
 /**
+ * Redirect bad urls to 404
+ */
+app.use(/^\/(?!#\/).*/, (req, res) => res.redirect('/#/404'));
+
+/**
  * Create a local server in order to start easily the application
  */
 app.listen(config.port, config.host, () => {
