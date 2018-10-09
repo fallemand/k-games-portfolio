@@ -56,11 +56,7 @@ class PortfolioPage extends React.Component {
               const gameInfo = gamesService.getGame(game);
               return (
                 <li className="portfolio__item" key={gameInfo.short}>
-                  <button
-                    type="button"
-                    className="portfolio__item-link"
-                    onClick={evt => this.handleGameClick(evt, gameInfo.short)}
-                  >
+                  <div className="portfolio__item-content">
                     <img className="portfolio__item-img" src={gameInfo.images.iconM} alt={gameInfo.name} />
                     <h3 className="portfolio__item-name">{gameInfo.name}</h3>
                     <div className="portfolio__item-actions">
@@ -79,7 +75,7 @@ class PortfolioPage extends React.Component {
                         Play
                       </Button>
                     </div>
-                  </button>
+                  </div>
                 </li>
               );
             })}

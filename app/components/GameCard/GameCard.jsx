@@ -6,7 +6,7 @@ import './_game-card.scss';
 
 const GameCard = ({ className, game, onAction, actions }) => (
   <div className={classnames(className, 'game-card')}>
-    <img className="game-card__image" src={game.images.banner} alt={`${game.name}`} />
+    <img className="game-card__image" src={game.images.banner} alt={game.name} />
     <div className="game-card__description">
       <h3 className="game-card__title">{game.name}</h3>
       <div className="game-card__actions">

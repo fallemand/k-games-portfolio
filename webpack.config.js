@@ -51,6 +51,9 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './app/index.html',
       favicon: './app/assets/images/favicon.png',
+      minify: {
+        removeScriptTypeAttributes: true,
+      },
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.css',

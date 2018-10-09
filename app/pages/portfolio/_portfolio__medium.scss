@@ -3,10 +3,9 @@
     width: inherit;
   }
 
-  .portfolio__item-link {
+  .portfolio__item-content {
     text-align: left;
     padding: 15px 20px;
-    cursor: pointer;
     transition: background $transition-fast, color $transition-fast;
 
     &:hover {

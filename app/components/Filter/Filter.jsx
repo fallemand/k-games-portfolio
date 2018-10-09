@@ -35,7 +35,7 @@ class Filter extends React.Component {
     return (
       <form className={classnames(className, 'filter')}>
         <fieldset className="filter__fieldset">
-          <legend className="filter__legend" id="name">Name</legend>
+          <legend className="filter__legend">Name</legend>
           <input
             className="filter__field"
             placeholder="Game name"
@@ -45,7 +45,7 @@ class Filter extends React.Component {
           />
         </fieldset>
         <fieldset className="filter__fieldset">
-          <legend className="filter__legend" id="name">Sort Order</legend>
+          <legend className="filter__legend">Sort Order</legend>
           <Dropdown
             name="sort"
             title="Sort"
@@ -56,7 +56,7 @@ class Filter extends React.Component {
           />
         </fieldset>
         <fieldset className="filter__fieldset">
-          <legend className="filter__legend" id="name">Randomize</legend>
+          <legend className="filter__legend">Randomize</legend>
           <button onClick={this.handleRandomize} type="button" className="filter__button">Go!</button>
         </fieldset>
       </form>
