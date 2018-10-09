@@ -10,7 +10,6 @@ const baseUrl = 'http://royal1.midasplayer.com/images/games/';
 const addImageAttributes = game => ({
   name: game.name,
   short: game.short,
-  url: game.url,
   images: {
     screenshot: `${baseUrl}${game.short}/dumps/screen_${game.short}.gif`,
     iconS: `${baseUrl}${game.short}/${game.short}_60x60.gif`,
@@ -42,7 +41,7 @@ const getGames = ({ filter, sort, page, pageSize }) => {
     });
   }
 
-  let paginatedGames = [];
+  let paginatedGames = filteredGames;
   if (page) {
     const startElement = (page - 1) * pageSize;
     const endElement = page * pageSize;
