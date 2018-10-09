@@ -20,7 +20,7 @@ class GamePage extends React.Component {
   }
 
   removeGame(gameId) {
-    portfolioService.add(gameId);
+    portfolioService.remove(gameId);
     const snackbar = {
       message: 'The game has been removed from your portfolio!',
       show: true,
@@ -37,7 +37,7 @@ class GamePage extends React.Component {
   }
 
   addGame(gameId) {
-    portfolioService.remove(gameId);
+    portfolioService.add(gameId);
     const snackbar = {
       message: 'The game has been added to your portfolio!',
       show: true,
