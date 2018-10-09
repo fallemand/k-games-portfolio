@@ -13,3 +13,6 @@ node_modules
 
 # IntelliJ
 .idea/*
+
+# e2e reposts
+tests/e2e/reports
