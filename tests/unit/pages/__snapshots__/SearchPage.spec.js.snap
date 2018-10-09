@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPage render with props 1`] = `
+"<div className='search'>
+  <div className='search__actions'>
+    <Filter onChange={[Function: bound onFilterChange]} filter='' sort='' className={{...}} />
+  </div>
+  <div className='search__list search__list--loading'>
+    <GameCard game={{...}} onAction={[Function: bound onCardButtonPressed]} actions={{...}} className={{...}} />
+  </div>
+  <Pagination className='search__pagination' active={1} total={10} show={10} onChange={[Function: bound onPageChange]} />
+  <Snackbar message='' show={false} className={{...}} />
+</div>"
+`;

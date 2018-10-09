@@ -55,7 +55,7 @@ class PortfolioPage extends React.Component {
             { games.map((game) => {
               const gameInfo = gamesService.getGame(game);
               return (
-                <li className="portfolio__item">
+                <li className="portfolio__item" key={gameInfo.short}>
                   <button
                     type="button"
                     className="portfolio__item-link"

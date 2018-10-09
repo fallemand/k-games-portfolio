@@ -6,10 +6,10 @@ import queryString from 'query-string';
 import Filter from '../../components/Filter';
 import GameCard from '../../components/GameCard';
 import Pagination from '../../components/Pagination';
+import Snackbar from '../../components/Snackbar';
 import gamesService from '../../services/games.service';
 import portfolioService from '../../services/portfolio.service';
 import './search.scss';
-import Snackbar from "../../components/Snackbar";
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -139,6 +139,7 @@ class SearchPage extends React.Component {
         >
           {games.map(game => (
             <GameCard
+              key={game}
               game={game}
               onAction={this.onCardButtonPressed}
               actions={portfolio.includes(game.short) ? ['remove', 'play'] : ['add', 'play']}
