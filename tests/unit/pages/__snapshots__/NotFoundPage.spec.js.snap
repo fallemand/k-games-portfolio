@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage render 1`] = `
+"<div className='not-found'>
+  <h1 className='not-found__title'>
+    404
+  </h1>
+  <h2 className='not-found__subtitle'>
+    We couldn&#39;t find the page you&#39;re looking for :(
+  </h2>
+  <button className='not-found__button' type='button' onClick={[Function: handleClick]}>
+    Go Home!
+  </button>
+</div>"
+`;
