@@ -6,7 +6,7 @@ exports[`Filter render with props 1`] = `
     <legend className='filter__legend'>
       Name
     </legend>
-    <input className='filter__field' placeholder='Game name' type='text' value='__QUERY__' onChange={[Function: bound handleQueryChange]} />
+    <input name='filter' className='filter__field' placeholder='Game name' type='text' value='__QUERY__' onChange={[Function: bound handleQueryChange]} />
   </fieldset>
   <fieldset className='filter__fieldset'>
     <legend className='filter__legend'>
