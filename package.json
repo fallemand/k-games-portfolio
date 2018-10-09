@@ -14,7 +14,8 @@
     "test:unit": "NODE_ENV=test jest",
     "test:e2e": "echo TODO",
     "test:e2e-setup": "selenium-standalone install --version=3.4.0 --drivers.chrome.version=2.40 --singleDriverInstall=chrome",
-    "lint": "eslint --ext .jsx,.js index.js ./app"
+    "lint": "eslint --ext .jsx,.js index.js ./app",
+    "prepush": "npm run test:unit"
   },
   "repository": {
     "type": "git",
