@@ -22,6 +22,8 @@ jest.mock('../../../app/services/games.service', () => ({
   }),
 }));
 
+global.setTimeout = jest.fn();
+
 jest.mock('../../../app/services/portfolio.service', () => ({
   getGames: () => ['game1', 'game2', 'game3'],
   remove: jest.fn().mockImplementation(() => ['game1', 'game2', 'game3']),
@@ -45,5 +47,7 @@ describe('SearchPage', () => {
     expect(portfolioService.add).toHaveBeenCalledWith('game1');
     component.instance().onCardButtonPressed('remove', 'game1');
     expect(portfolioService.remove).toHaveBeenCalledWith('game1');
+    component.instance().onCardButtonPressed('play', 'game1');
+    expect(props.history.push).toHaveBeenCalledWith('/games/game1');
   });
 });
