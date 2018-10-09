@@ -3,19 +3,19 @@
 exports[`Filter render with props 1`] = `
 "<form className='__CLASSNAME__ filter'>
   <fieldset className='filter__fieldset'>
-    <legend className='filter__legend' id='name'>
+    <legend className='filter__legend'>
       Name
     </legend>
     <input className='filter__field' placeholder='Game name' type='text' value='__QUERY__' onChange={[Function: bound handleQueryChange]} />
   </fieldset>
   <fieldset className='filter__fieldset'>
-    <legend className='filter__legend' id='name'>
+    <legend className='filter__legend'>
       Sort Order
     </legend>
     <Dropdown name='sort' title='Sort' className='filter__field' value='ascendant' options={{...}} onChange={[Function: bound handleSortChange]} />
   </fieldset>
   <fieldset className='filter__fieldset'>
-    <legend className='filter__legend' id='name'>
+    <legend className='filter__legend'>
       Randomize
     </legend>
     <button onClick={[Function: bound handleRandomize]} type='button' className='filter__button'>

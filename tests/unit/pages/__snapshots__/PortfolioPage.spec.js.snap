@@ -8,7 +8,7 @@ exports[`PortfolioPage render with props 1`] = `
     </h1>
     <ul className='portfolio__items-list'>
       <li className='portfolio__item'>
-        <button type='button' className='portfolio__item-link' onClick={[Function: onClick]}>
+        <div className='portfolio__item-content'>
           <img className='portfolio__item-img' src={[undefined]} alt='__NAME__' />
           <h3 className='portfolio__item-name'>
             __NAME__
@@ -21,10 +21,10 @@ exports[`PortfolioPage render with props 1`] = `
               Play
             </Button>
           </div>
-        </button>
+        </div>
       </li>
       <li className='portfolio__item'>
-        <button type='button' className='portfolio__item-link' onClick={[Function: onClick]}>
+        <div className='portfolio__item-content'>
           <img className='portfolio__item-img' src={[undefined]} alt='__NAME__' />
           <h3 className='portfolio__item-name'>
             __NAME__
@@ -37,10 +37,10 @@ exports[`PortfolioPage render with props 1`] = `
               Play
             </Button>
           </div>
-        </button>
+        </div>
       </li>
       <li className='portfolio__item'>
-        <button type='button' className='portfolio__item-link' onClick={[Function: onClick]}>
+        <div className='portfolio__item-content'>
           <img className='portfolio__item-img' src={[undefined]} alt='__NAME__' />
           <h3 className='portfolio__item-name'>
             __NAME__
@@ -53,7 +53,7 @@ exports[`PortfolioPage render with props 1`] = `
               Play
             </Button>
           </div>
-        </button>
+        </div>
       </li>
     </ul>
   </div>
