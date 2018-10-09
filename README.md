@@ -24,9 +24,9 @@
 ### W3C Validation
 All pages passed the validations without warnings  
 **See results:**  
-[![1](https://user-images.githubusercontent.com/16105726/46642016-33fcee80-cb4b-11e8-9702-3e6e37806a73.png)](https://user-images.githubusercontent.com/16105726/46642046-5262ea00-cb4b-11e8-87df-b067160a000c.png) 
-[![1](https://user-images.githubusercontent.com/16105726/46642015-33fcee80-cb4b-11e8-8cc1-cb348f58a26a.png)](https://user-images.githubusercontent.com/16105726/46642044-51ca5380-cb4b-11e8-88ce-f387d7148069.png) 
-[![1](https://user-images.githubusercontent.com/16105726/46642014-33fcee80-cb4b-11e8-8b1f-bf42fc2d5c6b.png)](https://user-images.githubusercontent.com/16105726/46642043-51ca5380-cb4b-11e8-8edc-a672704ae44c.png) 
+[![1](https://user-images.githubusercontent.com/16105726/46642016-33fcee80-cb4b-11e8-9702-3e6e37806a73.png)](https://user-images.githubusercontent.com/16105726/46644694-d3c07980-cb57-11e8-8966-b795e29ce465.png) 
+[![1](https://user-images.githubusercontent.com/16105726/46642015-33fcee80-cb4b-11e8-8cc1-cb348f58a26a.png)](https://user-images.githubusercontent.com/16105726/46644693-d3c07980-cb57-11e8-8a14-0d95909aa8d0.png) 
+[![1](https://user-images.githubusercontent.com/16105726/46642014-33fcee80-cb4b-11e8-8b1f-bf42fc2d5c6b.png)](https://user-images.githubusercontent.com/16105726/46644692-d327e300-cb57-11e8-89b6-7b1d79ebb71d.png) 
 
 
 ### Considerations
