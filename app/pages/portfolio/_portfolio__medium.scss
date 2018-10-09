@@ -6,6 +6,7 @@
   .portfolio__item-content {
     text-align: left;
     padding: 15px 20px;
+    min-height: auto;
     transition: background $transition-fast, color $transition-fast;
 
     &:hover {
