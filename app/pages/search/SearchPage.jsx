@@ -61,18 +61,12 @@ class SearchPage extends React.Component {
       case 'add':
         portfolio = portfolioService.add(gameKey);
         snackbar.message = 'The game has been added to your portfolio!';
-        this.setState({ snackbar });
-        this.setState({
-          portfolio,
-        });
+        this.setState({ snackbar, portfolio });
         break;
       case 'remove':
         portfolio = portfolioService.remove(gameKey);
         snackbar.message = 'The game has been removed from your portfolio!';
-        this.setState({ snackbar });
-        this.setState({
-          portfolio,
-        });
+        this.setState({ snackbar, portfolio });
         break;
       case 'play': history.push(`/games/${gameKey}`); break;
       default: console.error('invalid action', action);
